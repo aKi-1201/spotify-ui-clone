@@ -1,9 +1,17 @@
+//
+//  RecommendView.swift
+//  Spotify
+//
+//  Created by 114-1iosClassStudent05 on 2025/10/16.
+//
+
+
 import SwiftUI
 import UIKit
 
 struct RecommendView: View {
     var body: some View {
-        VStack{
+        VStack(spacing: 20) {
             Text ("專為 aKi 精心打造")
                 .font(.system(size:24, weight: .bold))
                 .foregroundColor(.white)

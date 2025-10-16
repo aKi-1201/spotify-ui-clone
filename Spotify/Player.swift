@@ -1,52 +1,63 @@
+//
+//  Player.swift
+//  Spotify
+//
+//  Created by 114-1iosClassStudent05 on 2025/10/16.
+//
+import SwiftUI
+import UIKit
+
 struct Player: View {
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             LinearGradient(
                 gradient: Gradient(colors: [Color.black.opacity(0.0), Color.black.opacity(0.9)]),
                 startPoint: .top,
                 endPoint: .bottom
                 
             )
-            .frame(height: 50)
+            .frame(height: 100)
             .ignoresSafeArea()
-            RoundedRectangle(cornerRadius: 5)
-                .frame(width: 380, height: 45)
-                .foregroundColor(Color(UIColor.darkGray))
-            HStack {
-                Image("David")
+            ZStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .frame(width: 380, height: 60)
+                    .foregroundColor(Color(white: 0.2))
+                HStack {
+                    Image("David")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 45, height: 45)
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("討厭紅樓夢")
+                            .font(.system(size:13, weight: .bold))
+                            .foregroundColor(.white)
+                        HStack(spacing: 0) {
+                            Text("陶喆")
+                                .font(.system(size:13))
+                                .foregroundColor(.white)
+                            Text("．無損音質")
+                                .font(.system(size:13))
+                                .foregroundColor(.green)
+                        }
+                        
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                }
+                .padding(.leading, 15)
+                Image(systemName: "checkmark.circle.fill")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 35, height: 35)
-                    .clipShape(RoundedRectangle(cornerRadius: 3))
-                VStack(alignment: .leading, spacing: 2) {
-                    HStack(spacing: 0) {
-                        Text("討厭紅樓夢")
-                            .font(.system(size:12, weight: .bold))
-                            .foregroundColor(.white)
-                        Text("．陶喆")
-                            .font(.system(size:12))
-                            .foregroundColor(.white)
-                    }
-                    Text("無損音質")
-                        .font(.system(size:12, weight: .bold))
-                        .foregroundColor(.green)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }
+                    .frame(width: 21, height: 21)
+                    .foregroundColor(.green)
+                    .padding(.leading, 260)
+                Image(systemName: "play.fill")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 17, height: 17)
+                    .foregroundColor(.white)
+                    .padding(.leading, 330)
             }
-            .padding(.leading, 15)
-            Image(systemName: "checkmark.circle.fill")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 21, height: 21)
-                .foregroundColor(.green)
-                .padding(.leading, 260)
-            Image(systemName: "play.fill")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 17, height: 17)
-                .foregroundColor(.white)
-                .padding(.leading, 330)
-            
         }
     }
 }
@@ -54,7 +65,7 @@ struct Player: View {
 struct ToolBar: View {
     var body: some View {
         VStack(spacing: 0) {
-            HStack(spacing: 60) {
+            HStack(spacing: 65) {
                 VStack {
                     Image("Home")
                         .resizable()
@@ -94,7 +105,7 @@ struct ToolBar: View {
                         .foregroundColor(.white)
                 }
             }
-            .padding(.vertical, 12)
+            .padding(.vertical, 16)
             .frame(maxWidth: .infinity)
             .background(Color.black)
         }

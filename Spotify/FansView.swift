@@ -1,3 +1,28 @@
+//
+//  FansView.swift
+//  Spotify
+//
+//  Created by 114-1iosClassStudent05 on 2025/10/16.
+//
+import SwiftUI
+import UIKit
+
+struct Artist: View {
+    let ArtistName: String
+    var body: some View {
+        VStack {
+            Image(ArtistName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 150, height: 150)
+                .clipShape(Circle())
+            Text(ArtistName)
+                .font(.system(size:15, weight: .bold))
+                .foregroundColor(.white)
+        }
+    }
+}
+
 struct FansView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
